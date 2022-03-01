@@ -70,27 +70,27 @@ There are different steps to add the files for CSV as to json in terms of the sy
 
 The product list is in a separate xlsx, as the branch information has a different naming convention for products, e.g. SKU a renaming of headers for consistency is needed at the time of merge. 
 
-Fulfilling Brief requirement - no.1 
+- Fulfilling Brief requirement - no.1 
 
 When the tail of the product category information was displayed it indicated there was an inconsistency in the category of fruits & vegetables. This was also created as a category in the non-plural 'fruits & vegetable' therefore this was replaced to the plural form.
 
-Fulfilling Brief requirement - no.2 
+- Fulfilling Brief requirement - no.2 
 Performance in the brief was unclear as referring to the terminology.txt the calculation of the performance indicator is already present in 'amount_in_gbp'  which 'contains the sum obtained from the transaction'. As sales in terms of amount_of_gbp was not taken by the brief description the performance was defined from the brief description as quantity by amount_of_gbp.
 
-Fulfilling Brief requirement - no.3 
+- Fulfilling Brief requirement - no.3 
 The top performing branches and worst will be established from the created csvs from the Brief no.2. A csv with a groupby of branchname and the time parameters which is summed to the amount of gbp was also created at the end of the cleanse.ipynb file. 
 
 - Fulfilling Brief requirement - no.4 
 To fulfil brief point 4 a total expenses from the four expenses is require. Also the profitability is needed using the amount_in_gbp subtracting from the total expenses After this a groupby of all branches can be used to sum up for the rows. This then allows the top 10 and bottom 10 profitable branches (using ascending = False) to indicate how profitable the branches are. 
 are. 
 
-- Problems encountered
+# Technologies used and Problems encountered
 
-As the files provided were very large, the computer processing power meant running the code caused a lot of time delays.
+As the files provided were very large, the computer processing power meant running the code caused a lot of time delays. Occassionally the imports of Pandas refused to work which meant restarting VS code and causing a long delay to re-run the raw data code. 
+
+Jira was used for project management and for monitoring of own Sprint. Pandas, Jupyter Notebooks, Python, Dash (in Part Two) and the various Components have been used. 
 
 There were mixed string characters as values under the quantity and amount_in_gbp files. These were initially tried to be replaced however, as more than 5 occurrances were detected a regex and to_numeric() was used instead. 
-# all_csv_files['amount_in_gbp'].replace('23a39.2000000000003', 0, inplace=True)
-# all_csv_files['quantity'].replace('6qw2', 0, inplace=True)
 
 The Bassetlaw_outlet.csv was requested to be added to the dataset which only contained files for 2013. This is the file which had a lot of unexpected values.
 
