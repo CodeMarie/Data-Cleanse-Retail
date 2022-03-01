@@ -1,4 +1,4 @@
-# Dash Data Cleanse 
+# Dash Data Cleanse - Retail Project 
 ## _Repository Part One of Two_
 
 ## Installation requirements
@@ -47,7 +47,7 @@ measured in both item quantity sold and monetary value of sales made, limit to b
 - 4. Identify the top 10 and bottom 10 profitable branches and indicate how profitable they
 are. (Calculate profitability by subtracting expense from total sales)
 
-A link to user stories can be found [here] ()
+A link to user stories can be found [here](https://docs.google.com/document/d/1EYUmi04A2ciJxW3AZM5q8ZRx0Iqf0PqBJJLc8ZMccrI/edit?usp=sharing)
 
 
 ## Development Diary 
@@ -88,6 +88,10 @@ There were mixed string characters as values under the quantity and amount_in_gb
 # all_csv_files['quantity'].replace('6qw2', 0, inplace=True)
 
 The Bassetlaw_outlet.csv was requested to be added to the dataset which only contained files for 2013. This is the file which had a lot of unexpected values.
+
+## Part Two 
+
+The link to the Repository for the Second Part i.e. the Dash Application can be found [here](https://github.com/CodeMarie/final-project-part-2-dash-app/tree/deploy-main)
 
 ## References 
 
