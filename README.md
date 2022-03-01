@@ -30,8 +30,11 @@ import os
 import pandas as pd
 ```
 
+If uploading to Github or similar, a .gitignore file must be made to hold the raw data which is in the region of 7Gb of data. 
+
 ## Data Files 
 There are a mix of csv and json files for the retail branch information which has the year, month, day, hour, product, quantity, and amount for purchased in GBP. 
+In the upload to Github these were placed within a folder called raw-data and Non-branch data which were added to the gitignore file. 
 There is a terminologies.txt which indicates which naming conventions have been employed throughout the branch data. As there are variations in some datasets, the header was set to use product and quantity to be iterated during the merge of the files. 
 
 NB As some of the shops were not opened until after 2010, although 10 years of data is hoped to be displayed, there are exceptions where the data will back from the opening e.g. from 2011, 2012 or 2013.
@@ -52,10 +55,12 @@ A link to user stories can be found [here](https://docs.google.com/document/d/1E
 
 ## Development Diary 
 
+- A cleanse-data.ipybn was used for the cleansing of the data. 
+
 - Column naming inconsistencies 
-The terminologies.txt demonstrates there are renaming differences, e.g. product, sku, and item within the branch.csv and branch.json files. As the products_list.csv uses the term products this will be used in renaming and the same for quantity.
+The terminologies.txt which was provided by the customer for the project demonstrates there are renaming differences, e.g. product, sku, and item within the branch.csv and branch.json files. As the products_list.csv uses the term products this will be used in renaming and the same for quantity.
  
-A new_header variable saved the preferred header columns. 
+A new_header variable was saved the preferred header columns. 
 As it is not possible to go through the files individually, which hints to the need for iteration using the filename of branches.
 Research into creation of a table using the filename resulted in the use of os and listdir() to be able to specify the path for the files to be found and iterated through. 
 
@@ -94,6 +99,5 @@ The Bassetlaw_outlet.csv was requested to be added to the dataset which only con
 The link to the Repository for the Second Part i.e. the Dash Application can be found [here](https://github.com/CodeMarie/final-project-part-2-dash-app/tree/deploy-main)
 
 ## References 
-
 
 - Jupyter Notebooks in Visual Code https://code.visualstudio.com/docs/datascience/jupyter-notebooks
