@@ -1,0 +1,20 @@
+The following terms mean the same things:
+
+
+1. Quantity: The amount of an item sold:-
+terms used: 
+    quantity
+    total_quantity
+    quantity_purchased
+    total_quantity_purchased
+
+2. Item: The item sold:-
+terms used:
+    item 
+    product
+    sku
+
+
+
+Note: 'amount_in_gbp'  contains the sum obtained from the transaction.
+This is uniform across all files
