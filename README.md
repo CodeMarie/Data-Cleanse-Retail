@@ -1,5 +1,6 @@
 # Dash Data Cleanse - Retail Project 
-## _Repository Part One of Two_
+## _Repository Part One of Two_ 
+
 
 ## Installation requirements
 
@@ -18,28 +19,28 @@ pip install pandas
 
 To work with Python in Jupyter Notebooks, you must activate a Python or Anaconda environment in VS Code which you've installed the Jupyter package. Using the shortcut Command Palette (Ctrl+Shift+P) and from dropdown Select Interpreter. For this project select the Python environment from Select Interpreter was used.
 
-Create a file with the extension ipynb, this file is called cleanse.ipynb, you can select a kernel from the top right of the workbook. 
+Create a file with the extension ipynb, for this project the file is called cleanse.ipynb, you can select a kernel from the top right of the workbook. 
 This will produce cells which can be ran all at the same time or can run independently for speed in data assessments.
 
-Using standard convention
-In the cell of this cleanse.ipynb file 
+- Using standard convention
+In the cell of this cleanse.ipynb file, import numpy and pandas which using standard convention is known as np and pd
 
 ```sh
 import numpy as np
 import os 
 import pandas as pd
 ```
-
-If uploading to Github or similar, a .gitignore file must be made to hold the raw data which is in the region of 7Gb of data. 
+Please note the raw data which is a mix of JSON and CSV files from different branches is in the range of 7Gb of data.
+Hence, if uploading to Github or similar, a .gitignore file must be made to hold the raw data.
 
 ## Data Files 
 There are a mix of csv and json files for the retail branch information which has the year, month, day, hour, product, quantity, and amount for purchased in GBP. 
 In the upload to Github these were placed within a folder called raw-data and Non-branch data which were added to the gitignore file. 
 There is a terminologies.txt which indicates which naming conventions have been employed throughout the branch data. As there are variations in some datasets, the header was set to use product and quantity to be iterated during the merge of the files. 
 
-NB As some of the shops were not opened until after 2010, although 10 years of data is hoped to be displayed, there are exceptions where the data will back from the opening e.g. from 2011, 2012 or 2013.
+Please note as some of the shops were not opened until after 2010, although 10 years of data is hoped to be displayed, there are exceptions where the data will back from the opening e.g. from 2011, 2012 or 2013.
 
-## Project Brief 
+## Project Brief - Requirements from the Client
 
 - 1. Track the most purchased and least purchased products & product categories
 overall, per region and per county (limit to top 5 and least 5)
@@ -71,8 +72,7 @@ There are different steps to add the files for CSV as to json in terms of the sy
 The product list is in a separate xlsx, as the branch information has a different naming convention for products, e.g. SKU a renaming of headers for consistency is needed at the time of merge. 
 
 - Fulfilling Brief requirement - no.1 
-
-When the tail of the product category information was displayed it indicated there was an inconsistency in the category of fruits & vegetables. This was also created as a category in the non-plural 'fruits & vegetable' therefore this was replaced to the plural form.
+When the bottom (tail) 10 files of of the product category information was displayed it indicated there was an inconsistency in the category of fruits & vegetables. This was also created as a category in the non-plural 'fruits & vegetable' therefore this was replaced to the plural form.
 
 - Fulfilling Brief requirement - no.2 
 Performance in the brief was unclear as referring to the terminology.txt the calculation of the performance indicator is already present in 'amount_in_gbp'  which 'contains the sum obtained from the transaction'. As sales in terms of amount_of_gbp was not taken by the brief description the performance was defined from the brief description as quantity by amount_of_gbp.
@@ -84,15 +84,18 @@ The top performing branches and worst will be established from the created csvs 
 To fulfil brief point 4 a total expenses from the four expenses is require. Also the profitability is needed using the amount_in_gbp subtracting from the total expenses After this a groupby of all branches can be used to sum up for the rows. This then allows the top 10 and bottom 10 profitable branches (using ascending = False) to indicate how profitable the branches are. 
 are. 
 
+Please note there are addition comments to the cleansing and merging of data required from the stage of raw data cleanse to the production of cleansed files saved as csvs for export within the folder csvs_clean
+
 # Technologies used and Problems encountered
+
 
 As the files provided were very large, the computer processing power meant running the code caused a lot of time delays. Occassionally the imports of Pandas refused to work which meant restarting VS code and causing a long delay to re-run the raw data code. 
 
-Jira was used for project management and for monitoring of own Sprint. Pandas, Jupyter Notebooks, Python, Dash (in Part Two) and the various Components have been used. 
+Jira was used for project management and for monitoring of own Sprint. A virtual environment was used with cleansing by Pandas within Jupyter Notebooks, Python, Dash (in Part Two) alongside Bootstrap components and CSS for styling. 
 
 There were mixed string characters as values under the quantity and amount_in_gbp files. These were initially tried to be replaced however, as more than 5 occurrances were detected a regex and to_numeric() was used instead. 
 
-The Bassetlaw_outlet.csv was requested to be added to the dataset which only contained files for 2013. This is the file which had a lot of unexpected values.
+The Bassetlaw_outlet.csv was requested to be added to the dataset which only contained files for 2013. This file in particular had a lot of unexpected values requiring extra cleansing. 
 
 ## Part Two 
 
@@ -101,3 +104,5 @@ The link to the Repository for the Second Part i.e. the Dash Application can be 
 ## References 
 
 - Jupyter Notebooks in Visual Code https://code.visualstudio.com/docs/datascience/jupyter-notebooks
+
+- Pandas Documentation https://pandas.pydata.org/docs/

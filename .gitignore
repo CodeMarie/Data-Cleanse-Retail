@@ -1,3 +1,4 @@
 Non-branch-data
 csvs_clean
 raw-data/
+.env/    
